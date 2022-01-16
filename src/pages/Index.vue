@@ -1,11 +1,16 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page class="column items-center justify-evenly">
+    <div>{{ title }}</div>
     <example-component
       title="Example component"
       active
       :todos="todos"
       :meta="meta"
-    ></example-component>
+    >
+      <template v-slot:header> hello, world! </template>
+      <!-- eslint-disable -->
+      <template v-slot:footer="slotProps"> {{ slotProps.title }} 111</template>
+    </example-component>
   </q-page>
 </template>
 
@@ -18,6 +23,7 @@ export default defineComponent({
   name: 'PageIndex',
   components: { ExampleComponent },
   setup() {
+    const title = 'ParentsTitle';
     const todos = ref<Todo[]>([
       {
         id: 1,
@@ -43,7 +49,7 @@ export default defineComponent({
     const meta = ref<Meta>({
       totalCount: 1200,
     });
-    return { todos, meta };
+    return { title, todos, meta };
   },
 });
 </script>

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <p>{{ title }}</p>
+    <p><slot name="header"></slot></p>
+    <p>
+      <slot name="footer" :title="newTitleData"></slot>
+    </p>
     <ul>
       <li v-for="todo in todos" :key="todo.id" @click="increment">
         {{ todo.id }} - {{ todo.content }}
@@ -52,10 +55,12 @@ export default defineComponent({
   },
   setup(props) {
     const slotData = '1';
+    const newTitleData = 'ExampleComponentData Slot Test';
     return {
       ...useClickCount(),
       ...useDisplayTodo(toRef(props, 'todos')),
       slotData,
+      newTitleData,
     };
   },
 });
