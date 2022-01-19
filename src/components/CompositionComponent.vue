@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p><slot name="header"></slot></p>
+    <p><slot name="header" class="header"></slot></p>
     <p>
       <slot name="footer" :title="newTitleData"></slot>
     </p>
@@ -65,3 +65,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.header {
+  color: var(--bg-default-color);
+}
+</style>
