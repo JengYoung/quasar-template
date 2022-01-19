@@ -54,6 +54,7 @@ module.exports = {
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
     // required to lint *.vue files
     'vue',
+    'prettier',
   ],
 
   globals: {
@@ -71,6 +72,7 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    'prettier/prettier': 'error',
     'no-param-reassign': 'off',
     'no-void': 'off',
     'no-nested-ternary': 'off',

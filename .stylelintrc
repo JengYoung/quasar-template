@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order",
+    "stylelint-prettier/recommended",
+    "stylelint-order",
+    "stylelint-config-recommended-vue"
+  ],
+  "plugins": ["stylelint-prettier"],
+  "overrides": [
+    {
+      "files": ["*.vue", "**/*.vue"]
+    }
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "selector-class-pattern": null
+  }
+}

@@ -89,19 +89,22 @@ export default defineComponent({
 .inner {
   padding: 0 20px;
 }
+
 .header__inner {
   display: flex;
-  background: var(--bg-black);
   align-items: center;
   height: 4rem;
-}
-.footer-nav {
   background: var(--bg-black);
+}
+
+.footer-nav {
   width: 100%;
+  background: var(--bg-black);
+
   &__link {
     margin: 0 auto;
-    text-decoration: none;
     color: var(--bg-white);
+    text-decoration: none;
   }
 }
 </style>
