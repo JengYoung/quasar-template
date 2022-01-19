@@ -7,7 +7,7 @@
         <div>{{ new Date().toLocaleDateString() }}</div>
       </q-toolbar>
 
-      <q-footer>
+      <q-footer v-if="isMobile">
         <q-toolbar class="footer-nav">
           <a href="" class="footer-nav__link">재영 소개</a>
           <a href="" class="footer-nav__link">오늘 목표</a>
@@ -59,20 +59,28 @@
 </template>
 
 <script lang="ts">
+import { useQuasar } from 'quasar';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'MainLayout',
 
   setup() {
+    const $q = useQuasar();
     const leftDrawerOpen = ref(false);
 
     return {
+      $q,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
     };
+  },
+  computed: {
+    isMobile() {
+      return this.$q.screen.width < 600;
+    },
   },
 });
 </script>
