@@ -106,5 +106,18 @@ export default defineComponent({
     color: var(--bg-white);
     text-decoration: none;
   }
+
+  .k {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 10px;
+    overflow: hidden;
+    background: black;
+    background-color: orange;
+    border-top: 5px;
+    border-right: 1px;
+    border-left: 3px;
+  }
 }
 </style>
