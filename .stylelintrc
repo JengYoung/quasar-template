@@ -1,13 +1,16 @@
 {
+  "customSyntax": "postcss-html",
   "extends": [
+    "stylelint-config-html/vue",
     "stylelint-config-standard-scss",
-    "stylelint-config-recess-order",
-    "stylelint-config-html",
-    "stylelint-prettier/recommended"
+    "stylelint-prettier/recommended",
+    "stylelint-config-recess-order"
   ],
   "plugins": ["stylelint-prettier"],
   "rules": {
+    "indentation": null,
     "prettier/prettier": true,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "no-empty-source": null
   }
 }

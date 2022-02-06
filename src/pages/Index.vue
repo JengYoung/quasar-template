@@ -1,55 +1,10 @@
+<script lang="ts" setup></script>
+
 <template>
   <q-page class="column items-center justify-evenly">
-    <div>{{ title }}</div>
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    >
-      <template v-slot:header> hello, world! </template>
-      <!-- eslint-disable -->
-      <template v-slot:footer="slotProps"> {{ slotProps.title }} 111</template>
-    </example-component>
+    <header class="page-header">
+      <h1>Let's practice Quasar!</h1>
+    </header>
+    <router-link to="/board"> BOARD! </router-link>
   </q-page>
 </template>
-
-<script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/CompositionComponent.vue';
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  name: 'PageIndex',
-  components: { ExampleComponent },
-  setup() {
-    const title = 'ParentsTitle';
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1',
-      },
-      {
-        id: 2,
-        content: 'ct2',
-      },
-      {
-        id: 3,
-        content: 'ct3',
-      },
-      {
-        id: 4,
-        content: 'ct4',
-      },
-      {
-        id: 5,
-        content: 'ct5',
-      },
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200,
-    });
-    return { title, todos, meta };
-  },
-});
-</script>

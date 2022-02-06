@@ -6,55 +6,19 @@
 
         <div>{{ new Date().toLocaleDateString() }}</div>
       </q-toolbar>
-
-      <q-footer v-if="isMobile">
-        <q-toolbar class="footer-nav">
-          <a href="" class="footer-nav__link">재영 소개</a>
-          <a href="" class="footer-nav__link">오늘 목표</a>
-          <a href="" class="footer-nav__link">마이페이지</a>
-        </q-toolbar>
-      </q-footer>
     </q-header>
 
     <q-page-container>
       <router-view />
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
-      <div>f</div>
     </q-page-container>
+
+    <q-footer v-if="isMobile">
+      <q-toolbar class="footer-nav">
+        <a href="" class="footer-nav__link">재영 소개</a>
+        <a href="" class="footer-nav__link">오늘 목표</a>
+        <a href="" class="footer-nav__link">마이페이지</a>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 

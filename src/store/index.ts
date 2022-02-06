@@ -6,8 +6,8 @@ import {
   useStore as vuexUseStore,
 } from 'vuex';
 
-// import example from './module-example'
-// import { ExampleStateInterface } from './module-example/state';
+import inquiry from './inquiry';
+import { InquiryStateInterface } from './inquiry/state';
 
 /*
  * If not building with SSR mode, you can
@@ -22,23 +22,24 @@ export interface StateInterface {
   // Define your own store structure, using submodules if needed
   // example: ExampleStateInterface;
   // Declared as unknown to avoid linting issue. Best to strongly type as per the line above.
-  example: unknown
+  inquiry: InquiryStateInterface;
 }
 
 // provide typings for `this.$store`
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $store: VuexStore<StateInterface>
+    $store: VuexStore<StateInterface>;
   }
 }
 
 // provide typings for `useStore` helper
-export const storeKey: InjectionKey<VuexStore<StateInterface>> = Symbol('vuex-key');
+export const storeKey: InjectionKey<VuexStore<StateInterface>> =
+  Symbol('vuex-key');
 
 export default store((/* { ssrContext } */) => {
   const Store = createStore<StateInterface>({
     modules: {
-      // example
+      inquiry,
     },
 
     // enable strict mode (adds overhead!)
